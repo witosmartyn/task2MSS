@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Form</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet"  href="../css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row" >
+        <form id="formSize" class="form-horizontal col-xs-4" method="post" th:action="@{/board}"  th:object="${params}">
+            <div class="input-group input-group-lg ">
+                <input class="form-control" id="inputSize" type="text" name="size" th:field="*{size}" placeholder="Please type size"/>
+                <span class="input-group-btn">
+                    <button id="btnSubmit" type="submit" class="btn btn-primary">submit</button>
+                </span>
+            </div>
+            </form>
+        </form>
+    </div>
+</div>
+    <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/custom.js"></script>
+</body>
+</html>
