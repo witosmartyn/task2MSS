@@ -4,7 +4,6 @@ import com.witosmartyn.app.board.models.Board;
 import com.witosmartyn.app.board.models.Cell;
 import com.witosmartyn.app.board.models.Params;
 import com.witosmartyn.app.config.Color;
-import jdk.management.resource.internal.inst.StaticInstrumentation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

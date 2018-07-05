@@ -5,7 +5,7 @@ package com.witosmartyn.app.board.models;
 /**
  * vitali
  */
-
+//used as dto
 public class Params {
     
     private int size;

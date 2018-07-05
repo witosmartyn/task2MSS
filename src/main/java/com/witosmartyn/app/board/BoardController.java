@@ -55,7 +55,6 @@ public class BoardController {
         }
 
         model.addAttribute(Constants.BOARD, boardService.generateBoard(params));
-        model.addAttribute("test", params);
         return Pages.BOARD;
     }
 }
