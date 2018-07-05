@@ -8,6 +8,7 @@ import java.util.List;
  */
 
 public class Board {
+
     private final List<List<Cell>> cells;
 
     public Board(List<List<Cell>> cells) {

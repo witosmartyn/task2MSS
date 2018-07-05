@@ -48,9 +48,10 @@ public class BoardController {
         log.info("size:" + params.getSize());
 
         if(bindRes.hasErrors() || !paramsValidator.isValid(params)){
-            model.addAttribute("errorMessage", Constants.ERROR_MESSAGE);
+            model.addAttribute("errorMessage",true);
             return Pages.FORM;
         }
+
         model.addAttribute(Constants.BOARD, boardService.generateBoard(params));
         model.addAttribute("test", params);
         return Pages.BOARD;

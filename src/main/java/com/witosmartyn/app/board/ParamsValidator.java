@@ -8,9 +8,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ParamsValidator {
-    public boolean isValid(Params params) {
-        boolean r = params.getSize() >= 0;
-        return r;
+    /**
+     * @return true if  @params.size is positive number
+     */
+    public boolean isValid(Params params){
+            return params.getSize() >= 0;
     }
 
 }
