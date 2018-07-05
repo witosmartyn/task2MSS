@@ -14,10 +14,10 @@
         <form id="formSize" class="form-horizontal col-xs-6" method="post" th:action="@{/}" th:object="${params}">
             <div class="input-group input-group-lg ">
                 <input class="form-control" id="inputSize" type="text" name="size" th:field="*{size}"
-                       placeholder="Please type size"/>
+                       placeholder="Please type size" autofocus/>
 
                 <span class="input-group-btn">
-                    <button id="btnSubmit" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
                 </span>
 
             </div>

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.annotation.Resource;
+
 
 /**
  * vitali
@@ -23,12 +25,12 @@ public class BoardController {
     private BoardService boardService;
     private ParamsValidator paramsValidator;
 
-    @Autowired
+    @Resource
     public void setParamsValidator(ParamsValidator paramsValidator) {
         this.paramsValidator = paramsValidator;
     }
 
-    @Autowired
+    @Resource
     public void setService( BoardService boardService) {
         this.boardService = boardService;
     }

@@ -22,14 +22,11 @@ public class BoardServiceTest {
     @Resource
     private BoardService boardService;
 
-
-
     @Test(expected = IllegalArgumentException.class)
     public void mustThrowIllegalArgumentException() {
         final Params params = new Params();
         params.setSize(-1);
         boardService.generateBoard(params);
-
     }
     @Test
     public void testGenerateBoard() {

@@ -18,10 +18,12 @@
 
     <div class="container">
         <div class="row">
-            <table class="board" th:object="${board}">
+            <table class="board" th:object="${board}" th:with="cellSize =${T(com.witosmartyn.app.board.models.Cell).celSize}">
                 <tr th:each="listsInner : *{cells}">
                     <td class="bl" th:each="cell :${listsInner}"
-                        th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'">
+                        th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'"
+                        th:styleappend="'height:'+${cellSize}+'px; '+'width:'+${cellSize}+'px;'"
+                    >
                     </td>
                 </tr>
                 </tr>

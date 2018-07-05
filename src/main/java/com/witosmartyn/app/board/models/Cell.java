@@ -8,6 +8,15 @@ import com.witosmartyn.app.config.Color;
 public class Cell {
 
     private final Color color;
+    private static double celSize;
+
+    public static double getCelSize() {
+        return celSize;
+    }
+
+    public static void setCelSize(double celSize) {
+        Cell.celSize = celSize;
+    }
 
     /**
      * @return Color own color.

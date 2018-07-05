@@ -6,7 +6,7 @@
     <groupId>com.witosmartyn</groupId>
     <artifactId>task2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>task2</name>
     <description>task2-MSS</description>
