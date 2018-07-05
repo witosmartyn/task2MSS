@@ -6,25 +6,27 @@
 
     <title>Board</title>
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet"  href="../css/style.css">
+
 </head>
 <body>
 <div class="container">
-    <a href="/">FORM</a>
-        <div class="container">
-            <div class="row">
-                    <table class="table" >
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                        </tr>
-                    </table>
+    <a href="/"> <- back to the form</a>
+    <div class="container">
+        <div class="row">
+            <table class="board">
+                <tr th:each="">
+                    <td class="bl"></td>
+                    <td class="wh"></td>
+                </tr>
+                <tr>
+                    <td class="wh"></td>
+                    <td class="bl"></td>
+                </td>
+            </tr>
 
-            </div>
-        </div>
+        </table>
+    </div>
 </div>
 <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/custom.js"></script>
