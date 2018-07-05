@@ -9,8 +9,6 @@ public enum Color {
 
     private int value;
 
-
-
     Color(int value) {
         this.value = value;
     }

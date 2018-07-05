@@ -7,6 +7,10 @@ import com.witosmartyn.app.config.Color;
  */
 public class Cell {
 
+    public Color getColor() {
+        return color;
+    }
+
     private final Color color;
 
     @Override

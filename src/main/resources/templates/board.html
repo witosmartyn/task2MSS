@@ -6,29 +6,30 @@
 
     <title>Board</title>
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet"  href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
 <div class="container">
-    <a href="/"> <- back to the form</a>
+    <a href="/" class="btn btn-info">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span>back to the form</span>
+
+    </a>
     <div class="container">
         <div class="row">
-            <table class="board">
-                <tr th:each="">
-                    <td class="bl"></td>
-                    <td class="wh"></td>
+            <table class="board" th:object="${board}">
+                <tr th:each="listsInner : *{cells}">
+                    <td class="bl" th:each="cell :${listsInner}"
+                        th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="wh"></td>
-                    <td class="bl"></td>
-                </td>
-            </tr>
+                </tr>
 
-        </table>
+            </table>
+        </div>
     </div>
-</div>
-<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="../static/js/custom.js"></script>
+    <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
 </body>
 </html>
