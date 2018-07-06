@@ -41,11 +41,14 @@ public class BoardService {
         }
         log.info("end generate,Generated:"+grid.length*grid.length);
         final Board board = new Board(convertTo2Dlist(grid));
-        makeResponsiveCellSize(board.getCells().size());
+        makeDynamycCellSize(board.getCells().size());
         return board;
     }
 
-    private void makeResponsiveCellSize(int gridSize) {
+    /**
+     * Calculate cellSize for Cell in pixels
+     */
+    private void makeDynamycCellSize(int gridSize) {
 
         if (gridSize > 1 &gridSize<100000) {
             Cell.setCelSize(1000 / gridSize);

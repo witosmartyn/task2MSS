@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ParamsValidator {
     /**
-     * @return true if  @params.size is positive number
+     * @return true if  @params.size is positive number & great than 1
      */
     public boolean isValid(Params params){
-            return params.getSize() >= 0;
+            return params.getSize() > 1;
     }
 
 }

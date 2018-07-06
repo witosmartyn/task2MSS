@@ -24,13 +24,14 @@ public class ParamsValidatorTest {
     @Test
     public void mustReturnTrue() {
         Params params = new Params();
-        params.setSize(1);
+        params.setSize(2);
         assertTrue(paramsValidator.isValid(params));
     }
     @Test
     public void mustReturnFalse() {
         Params params = new Params();
         params.setSize(1);
-        assertTrue(paramsValidator.isValid(params));
+        assertFalse(paramsValidator.isValid(params));
+       
     }
 }
