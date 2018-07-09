@@ -5,7 +5,6 @@ import com.witosmartyn.app.config.Constants;
 import com.witosmartyn.app.config.Pages;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,7 +21,7 @@ import javax.annotation.Resource;
 @Controller
 public class BoardController {
     private final Logger log = LoggerFactory.getLogger(BoardController.class);
-    private BoardService boardService;
+    private IBoardService boardService;
     private ParamsValidator paramsValidator;
 
     @Resource
@@ -31,29 +30,41 @@ public class BoardController {
     }
 
     @Resource
-    public void setService( BoardService boardService) {
+    public void setService(IBoardService boardService) {
         this.boardService = boardService;
     }
 
+    /**
+     * @return The  instance object that wraps the parameters
+     */
     @ModelAttribute(value = "params")
     public Params newParams(){
         return new Params();
     }
-
+    /**
+     * @return View page
+     */
     @GetMapping("/")
-    public String showIndex(Model model) {
+    public String showIndex() {
         return Pages.FORM;
     }
 
+    /** @param  params
+     *        The object that wraps the parameters
+     * Retrieves Query Parameters and
+     * Passes its to the BoardService
+     * and receive Board with cells
+     * Puts result to model
+     * @return view page
+     */
     @PostMapping("/")
-    public String postSize(/*@Valid */@ModelAttribute("params") Params params, BindingResult bindRes, Model model) {
+    public String postSize(@ModelAttribute("params") Params params, BindingResult bindRes, Model model) {
         log.info("size:" + params.getSize());
 
         if(bindRes.hasErrors() || !paramsValidator.isValid(params)){
             model.addAttribute("errorMessage",true);
             return Pages.FORM;
         }
-
         model.addAttribute(Constants.BOARD, boardService.generateBoard(params));
         return Pages.BOARD;
     }

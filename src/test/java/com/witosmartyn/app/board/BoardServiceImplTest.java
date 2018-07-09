@@ -7,6 +7,8 @@ import com.witosmartyn.app.board.models.Params;
 import com.witosmartyn.app.config.Color;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
@@ -18,9 +20,10 @@ import java.util.List;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BoardServiceTest {
+public class BoardServiceImplTest {
     @Resource
-    private BoardService boardService;
+    @Qualifier("boardServiceImpl")
+    private IBoardService boardService;
 
     @Test(expected = IllegalArgumentException.class)
     public void mustThrowIllegalArgumentException() {

@@ -11,6 +11,16 @@ public class Board {
 
     private final List<List<Cell>> cells;
 
+    private int celSize ;
+
+    public int getCelSize() {
+        return celSize;
+    }
+
+    public void setCelSize(int celSize) {
+        this.celSize = celSize;
+    }
+
     public Board(List<List<Cell>> cells) {
         this.cells = cells;
     }
