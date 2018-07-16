@@ -65,6 +65,7 @@ public class BoardController {
             model.addAttribute("errorMessage",true);
             return Pages.FORM;
         }
+        model.addAttribute("alphabet", Constants.ALPHABET.toCharArray());
         model.addAttribute(Constants.BOARD, boardService.generateBoard(params));
         return Pages.BOARD;
     }

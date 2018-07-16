@@ -33,24 +33,26 @@
             <table class="board" th:object="${board}" th:with="cellSize=${board.celSize}">
                <td>*</td>
                 <td th:each="listsInner,iter : *{cells}">
-                   <t class="text-center" th:text="${iter.index+1}"></t>
+                   <t class="text-center" th:text="${alphabet[__${iter.index}__]}"></t>
                </td>
                 <td>*</td>
 
 
                     <tr th:each="listsInner,iter : *{cells}">
-                     <td> <t class="text-center" th:text="${iter.index+1}"></t>
-                     </td>
-                        <td class="bl" th:each="cell :${listsInner}"
-                            th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'"
-                        >
-                        </td>
-                        <td> <t class="text-center" th:text="${iter.index+1}"></t></td>
-                    </tr>
+
+                     <td>
+                         <t class="text-center" th:text="${iter.index+1}"></t>
+                         </td>
+                            <td class="bl" th:each="cell :${listsInner}"
+                                th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'"
+                            >
+                            </td>
+                            <td> <t class="text-center" th:text="${iter.index+1}"></t></td>
+                        </tr>
                 <td>*</td>
 
                 <td th:each="listsInner,iter : *{cells}">
-                    <t class="text-center" th:text="${iter.index+1}"></t>
+                    <t class="text-center" th:text="${alphabet[__${iter.index}__]}"></t>
                 </td>
                 <td>*</td>
 
