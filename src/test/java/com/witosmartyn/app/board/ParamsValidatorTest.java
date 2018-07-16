@@ -32,6 +32,13 @@ public class ParamsValidatorTest {
         Params params = new Params();
         params.setSize(1);
         assertFalse(paramsValidator.isValid(params));
-       
+
+    }
+    @Test
+    public void whenParamSizeGreatThen40mustReturnFalse() {
+        Params params = new Params();
+        params.setSize(41);
+        assertFalse(paramsValidator.isValid(params));
+
     }
 }
