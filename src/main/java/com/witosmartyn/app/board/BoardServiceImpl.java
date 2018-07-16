@@ -89,9 +89,9 @@ public class BoardServiceImpl implements IBoardService {
             y++;
         }
         if (y % 2 == 0) {
-            return Color.WHITE;
+            return Color.BLACK;
         }
-        return Color.BLACK;
+        return Color.WHITE;
     }
 
 }

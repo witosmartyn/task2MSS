@@ -7,7 +7,18 @@
     <title>Board</title>
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/style.css">
+    <style th:inline="text" th:with="size=${board.celSize}">
+        td:not(bl):not(wh){
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        td.bl{
+            height: [[${size}]]px;
+            width: [[${size}]]px;
+        }
 
+    </style>
 </head>
 <body>
 <div class="container">
@@ -18,14 +29,33 @@
 
     <div class="container">
         <div class="row">
+            <div></div>
             <table class="board" th:object="${board}" th:with="cellSize=${board.celSize}">
-                <tr th:each="listsInner : *{cells}">
-                    <td class="bl" th:each="cell :${listsInner}"
-                        th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'"
-                        th:styleappend="'height:'+${cellSize}+'px; '+'width:'+${cellSize}+'px;'"
-                    >
-                    </td>
-                </tr>
+               <td>*</td>
+                <td th:each="listsInner,iter : *{cells}">
+                   <t class="text-center" th:text="${alphabet.size() gt iter.index} ? ${alphabet[__${iter.index}__]}:${iter.index+1}"></t>
+               </td>
+                <td>*</td>
+
+
+                    <tr th:each="listsInner,iter : *{cells}">
+
+                     <td>
+                         <t class="text-center" th:text="${iter.index+1}"></t>
+                         </td>
+                            <td class="bl" th:each="cell :${listsInner}"
+                                th:class="${cell.color.name() eq 'WHITE'} ? 'wh':'bl'"
+                            >
+                            </td>
+                            <td> <t class="text-center" th:text="${iter.index+1}"></t></td>
+                        </tr>
+                <td>*</td>
+
+                <td th:each="listsInner,iter : *{cells}">
+                    <t class="text-center" th:text="${alphabet.size() gt iter.index} ? ${alphabet[__${iter.index}__]}:${iter.index+1}"></t>
+                </td>
+                <td>*</td>
+
             </table>
         </div>
     </div>
