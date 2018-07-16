@@ -33,7 +33,7 @@
             <table class="board" th:object="${board}" th:with="cellSize=${board.celSize}">
                <td>*</td>
                 <td th:each="listsInner,iter : *{cells}">
-                   <t class="text-center" th:text="${alphabet[__${iter.index}__]}"></t>
+                   <t class="text-center" th:text="${alphabet.size() gt iter.index} ? ${alphabet[__${iter.index}__]}:${iter.index+1}"></t>
                </td>
                 <td>*</td>
 
@@ -52,7 +52,7 @@
                 <td>*</td>
 
                 <td th:each="listsInner,iter : *{cells}">
-                    <t class="text-center" th:text="${alphabet[__${iter.index}__]}"></t>
+                    <t class="text-center" th:text="${alphabet.size() gt iter.index} ? ${alphabet[__${iter.index}__]}:${iter.index+1}"></t>
                 </td>
                 <td>*</td>
 
